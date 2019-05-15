@@ -1,0 +1,13 @@
+#This docker run script can run the zyft images for special uid,jupyter port,host user data directories,jupyter config.
+
+docker stop zytf-user
+docker rm zytf-user
+docker run -d \
+  -u 1008:1008 \
+  -p 8888:8888 \
+  -v /etc/localtime:/etc/localtime \
+  -v /home/user:/home/user \
+  -v /home/jupyter-config/user:/home/jupyter-config/user \
+  --name zytf-user \
+  zytf \
+  bash -c 'source /etc/bash.bashrc && export XDG_RUNTIME_DIR=/home/jupyter-config/user && /usr/local/bin/jupyter-notebook  --config=/home/jupyter-config/user/.jupyter/jupyter_notebook_config_user.py'
