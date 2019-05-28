@@ -1,0 +1,20 @@
+{
+    "SSH": {
+        "User": "yourid",
+        "IP": "remotehost",
+        "Port": "22",
+        "Key": "xxxxxxxxxx"
+    },
+    "FwdSetting": [
+        {
+            "LocalPort": "6522",
+            "RemoteIP": "192.168.12.123",
+            "RemotePort": "22"
+        },
+        {
+            "LocalPort": "3389",
+            "RemoteIP": "192.168.96.21",
+            "RemotePort": "5123"
+        }
+    ]
+}
